@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `itemdb`;
 CREATE TABLE IF NOT EXISTS `items`
 (
+	
 	  `item_id` INT(3) UNSIGNED  NOT NULL AUTO_INCREMENT COMMENT 'id товара',
 	  `item_query` VARCHAR(255) NOT NULL COMMENT 'текст запроса',
 	  `item_title` VARCHAR(255) NOT NULL COMMENT 'название товара',
@@ -10,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `items`
 		CONSTRAINT ixIdItem PRIMARY KEY (item_id),
 		CONSTRAINT ixTitle UNIQUE KEY (item_title)  COMMENT 'уникальный ключ названия',
 		INDEX ixQuery(item_query)
+
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
